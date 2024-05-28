@@ -47,6 +47,7 @@
     border: 1px solid var(--border);
     color: var(--font-color-light);
     cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
 }
 
 .theme span {
@@ -70,6 +71,7 @@
     border: 1px solid var(--border);
     color: var(--font-color);
     position: relative;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
 }
 
 .indicator {
@@ -95,6 +97,7 @@
     border: 1px solid var(--border);
     border-radius: 50px;
     padding-left: 1em;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
 }
 
 .profile p {

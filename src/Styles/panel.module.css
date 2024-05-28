@@ -8,6 +8,7 @@
     border-radius: 1em;
     padding: 1em .5em;
     z-index: 999;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
 }
 
 .nav ul {

@@ -111,7 +111,7 @@ section{
   border: 0;
   padding: 1em;
   border-radius: 50px;
-  /* border: 1px solid var(--medium-bg); */
+  box-shadow: 0 5px 10px rgba(0,0,0,.05);
 }
 .main-container{
   background-color: var(--secondary-color);

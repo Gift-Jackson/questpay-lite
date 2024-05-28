@@ -26,6 +26,7 @@
     border: 1px solid var(--border);
     border-radius: 1em;
     color: var(--font-color);
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
 }
 
 .box:nth-child(1) .icon span{
