@@ -78,3 +78,7 @@
 input::placeholder {
     color: var(--font-color-light);
 }
+.input:focus, .select:focus{
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
