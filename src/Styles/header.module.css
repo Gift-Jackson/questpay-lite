@@ -1,0 +1,129 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    position: relative;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 50%;
+    background-color: var(--border);
+}
+
+.brand span {
+    background-color: var(--medium-bg);
+    font-size: small;
+    padding: .1em 1em .2em;
+    border-radius: 50px;
+    color: var(--font-color-light);
+}
+
+.brand h2 {
+    font-family: var(--font-2);
+    color: var(--primary-color);
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-bg);
+    height: 40px;
+    width: 40px;
+    border-radius: 1.1em;
+    border: 1px solid var(--border);
+    color: var(--font-color-light);
+    cursor: pointer;
+}
+
+.theme span {
+    font-size: 1.5em;
+}
+
+.theme:focus-within {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    border-color: var(--border-focus);
+}
+
+.bell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-bg);
+    height: 40px;
+    width: 40px;
+    border-radius: 1.1em;
+    border: 1px solid var(--border);
+    color: var(--font-color);
+    position: relative;
+}
+
+.indicator {
+    background-color: crimson;
+    border-radius: 50px;
+    position: absolute;
+    top: -15%;
+    right: -8px;
+    font-size: small;
+    padding: .15em .5em .2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: .3em;
+    background-color: var(--light-bg);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding-left: 1em;
+}
+
+.profile p {
+    font-size: small;
+    color: var(--font-color-light);
+}
+
+.initial {
+    height: 35px;
+    width: 35px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--white);
+}
+
+@media screen and (max-width:480px) {
+    .profile p{
+        display: none;
+    }
+    .profile{
+        padding: unset;
+        background-color: unset;
+        border: 0;
+    }
+    .initial{
+        width: 40px;
+        height: 40px;
+    }
+}
