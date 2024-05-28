@@ -180,3 +180,7 @@
     border-radius: .75em;
     background-color: var(--medium-bg);
 }
+
+.error{
+    color: var(--crimson);
+}

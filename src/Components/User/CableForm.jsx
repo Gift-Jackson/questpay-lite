@@ -1,23 +1,27 @@
 import { useState } from "react";
-import NetworkProviders from "./NetworkProviders";
+import CableProviders from "./CableProviders";
 import Select from "./Select";
-import styles from "../../Styles/serviceform.module.css";
+import styles from "../../Styles/cable.module.css";
 
-const DataForm = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+const CableForm = () => {
+  const [smartcard, setSmartcard] = useState("");
   const [amount, setAmount] = useState("");
   const [provider, setProvider] = useState("");
-  const [serviceType, setServiceType] = useState("");
-  const [errors, setErrors] = useState({ phoneNumber: "", amount: "", provider: "", serviceType: "" });
+  const [cablePlan, setCablePlan] = useState("");
+  const [errors, setErrors] = useState({
+    smartcard: "",
+    amount: "",
+    provider: "",
+    cablePlan: "",
+  });
 
   const validate = () => {
     const errors = {};
-    const phonePattern = /^(070|080|081|090|091|071|091|091|091|071|091)\d{8}$|^\+234\d{10}$/;
 
-    if (!phoneNumber) {
-      errors.phoneNumber = "Phone number is required";
-    } else if (!phonePattern.test(phoneNumber)) {
-      errors.phoneNumber = "Phone number is not valid";
+    if (!smartcard) {
+      errors.smartcard = "Smartcard/Decoder number is required";
+    } else if (!/^\d+$/.test(smartcard)) {
+      errors.smartcard = "Smartcard/Decoder number must be numeric";
     }
 
     if (!amount) {
@@ -30,8 +34,8 @@ const DataForm = () => {
       errors.provider = "Service provider is required";
     }
 
-    if (!serviceType) {
-      errors.serviceType = "Service type is required";
+    if (!cablePlan) {
+      errors.cablePlan = "Cable plan is required";
     }
 
     return errors;
@@ -51,37 +55,40 @@ const DataForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <NetworkProviders provider={provider} setProvider={setProvider} />
+        <CableProviders provider={provider} setProvider={setProvider} />
         {errors.provider && <p className={styles.error}>{errors.provider}</p>}
-        
-        <Select title="Select Data Type" name="serviceType" value={serviceType} onChange={(e) => setServiceType(e.target.value)} />
-        {errors.serviceType && <p className={styles.error}>{errors.serviceType}</p>}
+
+        <Select
+          title="Select Cable Plan"
+          name="cablePlan"
+          value={cablePlan}
+          onChange={(e) => setCablePlan(e.target.value)}
+        />
+        {errors.cablePlan && <p className={styles.error}>{errors.cablePlan}</p>}
 
         <div className={styles.wrapper}>
           <div className={styles.top}>
             <p>
-              Phone Number <span className={styles.red}>*</span>
+              Smartcard/Decoder Number <span className={styles.red}>*</span>
             </p>
           </div>
           <input
-            type="tel"
-            name="tel"
+            type="text"
+            name="smartcard"
             className={styles.input}
-            placeholder="Enter recipient phone number..."
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="Enter smartcard/ decoder number..."
+            value={smartcard}
+            onChange={(e) => setSmartcard(e.target.value)}
           />
-          {errors.phoneNumber && <p className={styles.error}>{errors.phoneNumber}</p>}
-          <br />
-          <div className={styles.btn}>
-            <i className="fa-regular fa-user"></i> &nbsp; Use my number
-          </div>
+          {errors.smartcard && (
+            <p className={styles.error}>{errors.smartcard}</p>
+          )}
         </div>
 
         <div className={styles.wrapper}>
           <div className={styles.top}>
             <p>
-              Enter amount <span className={styles.red}>*</span>
+              Amount <span className={styles.red}>*</span>
             </p>
             <p>
               Balance: <b>&#8358; 0.00</b>
@@ -91,7 +98,8 @@ const DataForm = () => {
             type="number"
             name="amount"
             className={styles.input}
-            placeholder="Enter amount..."
+            placeholder="0.00"
+            readOnly
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
@@ -105,4 +113,4 @@ const DataForm = () => {
   );
 };
 
-export default DataForm;
+export default CableForm;

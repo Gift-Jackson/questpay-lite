@@ -7,6 +7,8 @@ import ThemeContextProvider from "./Context/ThemeContextProvider";
 import ServicePage from "./Pages/ServicePage";
 import AirtimePage from "./Pages/AirtimePage";
 import DataPage from "./Pages/DataPage";
+import CablePage from "./Pages/CablePage";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
   return (
@@ -20,7 +22,11 @@ const App = () => {
             <Route path="services" element={<ServicePage />} />
             <Route path="airtime" element={<AirtimePage />} />
             <Route path="data" element={<DataPage />} />
+            <Route path="cable" element={<CablePage />} />
+            <Route path="*" element={<NotFound/>} />
           </Route>
+          <Route path="*" element={<NotFound/>} />
+          
         </Routes>
       </ThemeContextProvider>
     </>

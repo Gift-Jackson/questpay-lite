@@ -3,6 +3,7 @@ import Heading from "../Components/User/Heading"
 import { services } from "../constants/data"
 import styles from '../Styles/services.module.css'
 const ServicePage = () => {
+    document.title = "QuestPay | Services"
     return (
       <>
       <Heading title="Services" />

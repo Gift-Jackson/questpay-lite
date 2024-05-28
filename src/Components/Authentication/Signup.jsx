@@ -1,16 +1,65 @@
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../Styles/authform.module.css";
 import googleIcon from "../../assets/google_icon.svg";
 import FormTitle from "./FormTitle";
-import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContextProvider";
+
 const Signup = () => {
   const { toggleTheme, darkMode } = useContext(ThemeContext);
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+
+  const validate = () => {
+    const errors = {};
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^(070|080|081|090|091|071|091|091|091|071|091)\d{8}$|^\+234\d{10}$/; // E.164 international phone number format
+
+    if (!name) {
+      errors.name = "Full name is required";
+    }
+
+    if (!email) {
+      errors.email = "E-mail is required";
+    } else if (!emailPattern.test(email)) {
+      errors.email = "E-mail is not valid";
+    }
+
+    if (!phone) {
+      errors.phone = "Phone number is required";
+    } else if (!phonePattern.test(phone)) {
+      errors.phone = "Phone number is not valid";
+    }
+
+    if (!password) {
+      errors.password = "Password is required";
+    } else if (password.length < 6) {
+      errors.password = "Password must be at least 6 characters long";
+    }
+
+    return errors;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      navigate("/dashboard");
+    }
   };
+
   return (
     <>
       <div className={styles.container}>
@@ -49,7 +98,10 @@ const Signup = () => {
               id="name"
               placeholder="Enter your full name..."
               autoComplete="off"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
+            {errors.name && <p className={styles.error}>{errors.name}</p>}
           </div>
           <div className={styles.grp}>
             <label htmlFor="email">
@@ -61,7 +113,10 @@ const Signup = () => {
               id="email"
               placeholder="Enter your e-mail address..."
               autoComplete="off"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
+            {errors.email && <p className={styles.error}>{errors.email}</p>}
           </div>
           <div className={styles.grp}>
             <label htmlFor="tel">
@@ -73,7 +128,10 @@ const Signup = () => {
               id="tel"
               placeholder="Enter your phone number"
               autoComplete="off"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
+            {errors.phone && <p className={styles.error}>{errors.phone}</p>}
           </div>
           <div className={styles.grp}>
             <label htmlFor="password">
@@ -81,18 +139,26 @@ const Signup = () => {
             </label>
             <div className={styles.relative}>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="> 5 characters"
                 autoComplete="off"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
-              <div className={styles.pwdToggle}>
+              <div
+                className={styles.pwdToggle}
+                onClick={() => setShowPassword(!showPassword)}
+              >
                 <span className="material-symbols-outlined">
-                  visibility_off
+                  {showPassword ? "visibility" : "visibility_off"}
                 </span>
               </div>
             </div>
+            {errors.password && (
+              <p className={styles.error}>{errors.password}</p>
+            )}
           </div>
 
           <button className={styles.btn} type="submit">

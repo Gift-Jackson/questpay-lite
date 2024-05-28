@@ -1,16 +1,47 @@
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../Styles/authform.module.css";
 import googleIcon from "../../assets/google_icon.svg";
 import FormTitle from "./FormTitle";
-import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContextProvider";
+
 const Login = () => {
-  const {toggleTheme, darkMode} = useContext(ThemeContext)
-  const navigate = useNavigate()
+  const { toggleTheme, darkMode } = useContext(ThemeContext);
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({ email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false);
+
+  const validate = () => {
+    const errors = {};
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email) {
+      errors.email = "E-mail is required";
+    } else if (!emailPattern.test(email)) {
+      errors.email = "E-mail is not valid";
+    }
+
+    if (!password) {
+      errors.password = "Password is required";
+    } else if (password.length < 6) {
+      errors.password = "Password must be at least 6 characters long";
+    }
+
+    return errors;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard")
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      navigate("/dashboard");
+    }
   };
+
   return (
     <>
       <div className={styles.container}>
@@ -21,7 +52,7 @@ const Login = () => {
           </a>
 
           <button className={styles.theme} onClick={toggleTheme}>
-          {darkMode ? (
+            {darkMode ? (
               <span className="material-symbols-outlined theme-icon">
                 light_mode
               </span>
@@ -49,7 +80,10 @@ const Login = () => {
               id="email"
               placeholder="Enter your e-mail address..."
               autoComplete="off"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
+            {errors.email && <p className={styles.error}>{errors.email}</p>}
           </div>
           <div className={styles.grp}>
             <label htmlFor="password">
@@ -57,21 +91,27 @@ const Login = () => {
             </label>
             <div className={styles.relative}>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="> 5 characters"
                 autoComplete="off"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
-              <div className={styles.pwdToggle}>
+              <div
+                className={styles.pwdToggle}
+                onClick={() => setShowPassword(!showPassword)}
+              >
                 <span className="material-symbols-outlined">
-                  visibility_off
+                  {showPassword ? "visibility" : "visibility_off"}
                 </span>
               </div>
             </div>
+            {errors.password && <p className={styles.error}>{errors.password}</p>}
           </div>
           <div className={styles.fpwd}>
-            <Link>forgotten password?</Link>
+            <Link to="/forgot-password">Forgotten password?</Link>
           </div>
 
           <button className={styles.btn} type="submit">
