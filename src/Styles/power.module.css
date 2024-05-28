@@ -24,6 +24,7 @@
 
 .chk:checked+.label {
     background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .submit_btn {
