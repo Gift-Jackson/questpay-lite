@@ -183,4 +183,5 @@
 
 .error{
     color: var(--crimson);
+    font-size: small;
 }
