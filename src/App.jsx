@@ -9,6 +9,7 @@ import AirtimePage from "./Pages/AirtimePage";
 import DataPage from "./Pages/DataPage";
 import CablePage from "./Pages/CablePage";
 import NotFound from "./Pages/NotFound";
+import PowerPage from "./Pages/PowerPage";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="airtime" element={<AirtimePage />} />
             <Route path="data" element={<DataPage />} />
             <Route path="cable" element={<CablePage />} />
+            <Route path="electricity" element={<PowerPage />} />
             <Route path="*" element={<NotFound/>} />
           </Route>
           <Route path="*" element={<NotFound/>} />

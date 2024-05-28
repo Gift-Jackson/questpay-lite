@@ -22,7 +22,7 @@
   --border-focus: #ddd;
   --shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   --white: #fefefe;
-  --font-1: "Outfit", sans-serif;
+  --font-1: "Outfit", system-ui;
   --font-2: "Jaro", system-ui;
 
   --green: mediumseagreen;

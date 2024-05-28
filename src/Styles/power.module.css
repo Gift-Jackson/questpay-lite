@@ -1,0 +1,80 @@
+.type {
+    width: 70%;
+    margin: auto;
+    background-color: var(--light-bg);
+    display: flex;
+    border-radius: 1em;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.label {
+    flex: 1;
+    text-align: center;
+    padding: 1em;
+}
+
+.label:nth-of-type(1) {
+    border-right: 1px solid var(--border);
+}
+
+.chk {
+    display: none;
+}
+
+.chk:checked+.label {
+    background-color: var(--primary-color);
+}
+
+.submit_btn {
+    width: 100%;
+    padding: 1em 0;
+    border: 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: .75em;
+    transition: .2s;
+}
+
+.error {
+    color: var(--crimson);
+    font-size: small;
+}
+
+.input {
+    margin-top: 1em;
+    width: 100%;
+    padding: .85em 1.5em;
+    border: 1px solid var(--border);
+    background-color: var(--secondary-color);
+    border-radius: 1em;
+    caret-color: var(--primary-color);
+}
+
+.wrapper {
+    background-color: var(--light-bg);
+    padding: 1em;
+    border: 1px solid var(--border);
+    border-radius: 1em;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .05);
+    margin-bottom: .5em;
+}
+
+.container {
+    margin-bottom: 4em;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.red {
+    color: crimson;
+}
+
+
+input::placeholder {
+    color: var(--font-color-light);
+}

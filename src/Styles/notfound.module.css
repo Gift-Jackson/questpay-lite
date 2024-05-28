@@ -1,7 +1,9 @@
 .container{
     text-align: center;
-    margin: 3em auto;
+    margin:  auto;
+    padding: 3em 1em;
     width: min(90%, 480px);
+    min-height: 100dvh;
 }
 .container h1{
     font-family: var(--font-2);
@@ -11,10 +13,11 @@
 }
 
 .btn{
-    background-color: var(--medium-bg);
+    background-color: var(--primary-color);
     text-transform: capitalize;
     margin: 2em auto;
     padding: 1em 2em;
-    border: 1px solid var(--border);
+    border: 0;
     border-radius: .5em;
+    color: var(--white);
 }
