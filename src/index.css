@@ -101,7 +101,7 @@ main {
 
 section{
   width: min(100%, 700px);
-  margin: 1em auto;
+  margin: auto;
 }
 .btn{
   width: min(100%, 200px);

@@ -10,7 +10,7 @@ const Panel = () => {
             <li key={index}>
               <NavLink className="nav-link" to={item.path}>
                 <div className={styles.icon}>
-                    <span className="material-symbols-outlined theme-icon">
+                    <span className="material-symbols-outlined">
                       {item.icon}
                     </span>
                 </div>

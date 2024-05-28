@@ -40,52 +40,82 @@ export const services = [
     {
         icon: 'call',
         name: 'Airtime',
-        path: 'airtime'
+        path: '/dashboard/airtime'
     },
     {
         icon: 'wifi',
         name: 'Data',
-        path: 'data'
+        path: '/dashboard/data'
     },
     {
         icon: 'router',
         name: 'Cable',
-        path: 'cable'
+        path: '/dashboard/cable'
     },
     {
         icon: 'bolt',
         name: 'Power',
-        path: 'electricity'
+        path: '/dashboard/electricity'
     },
     {
         icon: 'swap_horiz',
         name: 'Swap',
-        path: 'airtime-cash'
+        path: '/dashboard/airtime-cash'
     },
     {
         icon: 'encrypted',
         name: 'Crypto',
-        path: 'crypto'
+        path: '/dashboard/crypto'
+    },
+    {
+        icon: 'contact_support',
+        name: 'More',
+        path: '/dashboard/more'
+    },
+    {
+        icon: 'contact_support',
+        name: 'More',
+        path: '/dashboard/more'
+    },
+    {
+        icon: 'contact_support',
+        name: 'More',
+        path: '/dashboard/more'
+    },
+    {
+        icon: 'contact_support',
+        name: 'More',
+        path: '/dashboard/more'
+    },
+    {
+        icon: 'contact_support',
+        name: 'More',
+        path: '/dashboard/more'
+    },
+    {
+        icon: 'contact_support',
+        name: 'More',
+        path: '/dashboard/more'
     },
 ]
 export const sideNav = [
     {
-        icon: 'dashboard',
+        icon: 'home',
         name: 'Dashboard',
         path: ''
     },
     {
-        icon: 'person',
-        name: 'Account',
-        path: '/account'
+        icon: 'payments',
+        name: 'Wallet',
+        path: '/wallet'
     },
     {
-        icon: 'settings',
-        name: 'Settings',
-        path: '/settings'
+        icon: 'manage_accounts',
+        name: 'Profile',
+        path: '/profile'
     },
     {
-        icon: 'support_agent',
+        icon: 'help',
         name: 'Support',
         path: '/support'
     },

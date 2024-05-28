@@ -24,7 +24,7 @@ const Cards = ({ toggleBalance, showBalance }) => {
           <div>
             {showBalance ? (
               <h2>
-                345,500.00 <span className={styles.currency}>NGN</span>
+                0.00 <span className={styles.currency}>NGN</span>
               </h2>
             ) : (
               <h2>*******</h2>

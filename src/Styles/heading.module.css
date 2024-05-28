@@ -1,0 +1,27 @@
+.heading{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    margin-bottom: 1em;
+    position: relative;
+}
+.heading::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 50%;
+    background-color: var(--border);
+}
+.btn{
+    height: 40px;
+    width: 40px;
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}

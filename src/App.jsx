@@ -4,6 +4,9 @@ import SignupPage from "./Pages/SignupPage";
 import UserLayout from "./Pages/UserLayout";
 import Dashboard from "./Components/User/Dashboard";
 import ThemeContextProvider from "./Context/ThemeContextProvider";
+import ServicePage from "./Pages/ServicePage";
+import AirtimePage from "./Pages/AirtimePage";
+import DataPage from "./Pages/DataPage";
 
 const App = () => {
   return (
@@ -14,6 +17,9 @@ const App = () => {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="dashboard/" element={<UserLayout />}>
             <Route index element={<Dashboard />} />
+            <Route path="services" element={<ServicePage />} />
+            <Route path="airtime" element={<AirtimePage />} />
+            <Route path="data" element={<DataPage />} />
           </Route>
         </Routes>
       </ThemeContextProvider>

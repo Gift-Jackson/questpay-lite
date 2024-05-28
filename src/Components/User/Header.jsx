@@ -5,7 +5,6 @@ import { ThemeContext } from "../../Context/ThemeContextProvider";
 const Header = () => {
   const { toggleTheme, darkMode } = useContext(ThemeContext);
   return (
-    <main>
       <header className={styles.header}>
         <a className={styles.brand} href="/">
           <h2>QuestPay</h2>
@@ -33,7 +32,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </main>
   );
 };
 

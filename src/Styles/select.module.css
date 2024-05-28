@@ -1,0 +1,29 @@
+.wrapper{
+    background-color: var(--light-bg);
+    padding: 1em;
+    border: 1px solid var(--border);
+    border-radius: 1em;
+    box-shadow: 0 5px 30px rgba(0,0,0,.05);
+    margin-bottom: .5em;
+}
+.select{
+    margin-top: 1em;
+    width: 100%;
+    padding: .85em 1.5em;
+    border: 1px solid var(--border);
+    background-color: var(--secondary-color);
+    border-radius: 1em;
+    caret-color: var(--primary-color);
+}
+.select option{
+    background-color: var(--medium-bg);
+    border: 0;
+    color: var(--font-color-light);
+}
+.select:focus{
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+.red {
+    color: crimson;
+}

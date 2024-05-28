@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cards from "./Cards";
 import Services from "./Services";
+import Header from './Header'
 const Dashboard = () => {
   const [showBalance, setShowBalance] = useState(false);
 
@@ -9,6 +10,7 @@ const Dashboard = () => {
   };
   return (
     <>
+      <Header/>
       <Cards toggleBalance={toggleBalance} showBalance={showBalance} />
       <Services />
       <button className="btn">
