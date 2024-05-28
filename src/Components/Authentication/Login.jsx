@@ -66,7 +66,7 @@ const Login = () => {
 
         <FormTitle
           title="Sign In"
-          subtitle="Welcome back, let's sign you back in..."
+          subtitle="Welcome back, let's sign you in..."
         />
 
         <form onSubmit={handleSubmit} className={styles.form}>
