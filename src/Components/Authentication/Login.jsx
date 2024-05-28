@@ -2,7 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "../../Styles/authform.module.css";
 import googleIcon from "../../assets/google_icon.svg";
 import FormTitle from "./FormTitle";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/ThemeContextProvider";
 const Login = () => {
+  const {toggleTheme, darkMode} = useContext(ThemeContext)
   const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,10 +20,16 @@ const Login = () => {
             <span>lite version</span>
           </a>
 
-          <button className={styles.theme}>
-            <span className="material-symbols-outlined theme-icon">
-              dark_mode
-            </span>
+          <button className={styles.theme} onClick={toggleTheme}>
+          {darkMode ? (
+              <span className="material-symbols-outlined theme-icon">
+                light_mode
+              </span>
+            ) : (
+              <span className="material-symbols-outlined theme-icon">
+                dark_mode
+              </span>
+            )}
           </button>
         </header>
 

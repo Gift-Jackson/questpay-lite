@@ -110,7 +110,7 @@ section{
   color: var(--white);
   border: 0;
   padding: 1em;
-  border-radius: .5em;
+  border-radius: 50px;
   /* border: 1px solid var(--medium-bg); */
 }
 .main-container{

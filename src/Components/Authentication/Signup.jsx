@@ -2,25 +2,34 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "../../Styles/authform.module.css";
 import googleIcon from "../../assets/google_icon.svg";
 import FormTitle from "./FormTitle";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/ThemeContextProvider";
 const Signup = () => {
-  const navigate = useNavigate()
+  const { toggleTheme, darkMode } = useContext(ThemeContext);
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard")
+    navigate("/dashboard");
   };
   return (
     <>
       <div className={styles.container}>
         <header className={styles.header}>
           <a className={styles.brand} href="/">
-                      <h2>QuestPay</h2> 
-                      <span>lite version</span>
+            <h2>QuestPay</h2>
+            <span>lite version</span>
           </a>
 
-          <button className={styles.theme}>
-            <span className="material-symbols-outlined theme-icon">
-              dark_mode
-            </span>
+          <button className={styles.theme} onClick={toggleTheme}>
+            {darkMode ? (
+              <span className="material-symbols-outlined theme-icon">
+                light_mode
+              </span>
+            ) : (
+              <span className="material-symbols-outlined theme-icon">
+                dark_mode
+              </span>
+            )}
           </button>
         </header>
 
