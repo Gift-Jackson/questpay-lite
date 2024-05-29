@@ -12,15 +12,21 @@ const NetworkProviders = ({ provider, setProvider }) => {
       <div className={styles.wrapper}>
         <div className={styles.top}>
           <p> Select a Service Provider <span className={styles.red}>*</span></p>
+
+          {provider && (
+            <p className={styles.green}>
+              <i className="fa-regular fa-circle-check"></i>&nbsp;{provider}
+            </p>
+          )}
         </div>
         <div className={styles.providers}>
           <input
             type="radio"
             name="provider"
             className={styles.chk}
-            value="mtn"
+            value="MTN"
             id="mtn"
-            checked={provider === "mtn"}
+            checked={provider === "MTN"}
             onChange={(e) => setProvider(e.target.value)}
           />
           <label htmlFor="mtn">
@@ -30,9 +36,9 @@ const NetworkProviders = ({ provider, setProvider }) => {
             type="radio"
             name="provider"
             className={styles.chk}
-            value="airtel"
+            value="Airtel"
             id="airtel"
-            checked={provider === "airtel"}
+            checked={provider === "Airtel"}
             onChange={(e) => setProvider(e.target.value)}
           />
           <label htmlFor="airtel">
@@ -42,9 +48,9 @@ const NetworkProviders = ({ provider, setProvider }) => {
             type="radio"
             name="provider"
             className={styles.chk}
-            value="glo"
+            value="GLO"
             id="glo"
-            checked={provider === "glo"}
+            checked={provider === "GLO"}
             onChange={(e) => setProvider(e.target.value)}
           />
           <label htmlFor="glo">

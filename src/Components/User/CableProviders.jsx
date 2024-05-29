@@ -13,15 +13,20 @@ const CableProviders = ({ provider, setProvider }) => {
           <p>
             Select a Service Provider <span className={styles.red}>*</span>
           </p>
+          {provider && (
+            <p className={styles.green}>
+              <i className="fa-regular fa-circle-check"></i>&nbsp;{provider}
+            </p>
+          )}
         </div>
         <div className={styles.providers}>
           <input
             type="radio"
             name="provider"
             className={styles.chk}
-            value="dstv"
+            value="DSTV"
             id="dstv"
-            checked={provider === "dstv"}
+            checked={provider === "DSTV"}
             onChange={(e) => setProvider(e.target.value)}
           />
           <label htmlFor="dstv">
@@ -31,9 +36,9 @@ const CableProviders = ({ provider, setProvider }) => {
             type="radio"
             name="provider"
             className={styles.chk}
-            value="gotv"
+            value="GOTV"
             id="gotv"
-            checked={provider === "gotv"}
+            checked={provider === "GOTV"}
             onChange={(e) => setProvider(e.target.value)}
           />
           <label htmlFor="gotv">
@@ -43,9 +48,9 @@ const CableProviders = ({ provider, setProvider }) => {
             type="radio"
             name="provider"
             className={styles.chk}
-            value="startimes"
+            value="Startimes"
             id="startimes"
-            checked={provider === "startimes"}
+            checked={provider === "Startimes"}
             onChange={(e) => setProvider(e.target.value)}
           />
           <label htmlFor="startimes">
@@ -55,9 +60,9 @@ const CableProviders = ({ provider, setProvider }) => {
             type="radio"
             name="provider"
             className={styles.chk}
-            value="startimes_on"
+            value="Startimes On"
             id="startimes_on"
-            checked={provider === "startimes_on"}
+            checked={provider === "Startimes On"}
             onChange={(e) => setProvider(e.target.value)}
           />
           <label htmlFor="startimes_on">

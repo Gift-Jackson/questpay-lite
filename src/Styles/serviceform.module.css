@@ -10,7 +10,9 @@
 .red {
     color: crimson;
 }
-
+.green{
+    color: mediumseagreen;
+}
 
 input::placeholder{
     color: var(--font-color-light);

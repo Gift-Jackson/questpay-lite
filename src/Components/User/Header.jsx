@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import styles from "../../Styles/header.module.css";
 import { ThemeContext } from "../../Context/ThemeContextProvider";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { toggleTheme, darkMode } = useContext(ThemeContext);
   return (
       <header className={styles.header}>
-        <a className={styles.brand} href="/">
+        <Link className={styles.brand} to="/dashboard">
           <h2>QuestPay</h2>
           {/* <span>lite version</span> */}
-        </a>
+        </Link>
         <div className={styles.right}>
           <button onClick={toggleTheme} className={styles.theme}>
             {darkMode ? (
@@ -23,7 +24,7 @@ const Header = () => {
             )}
           </button>
           <div className={styles.bell}>
-            <div className={styles.indicator}>12</div>
+            <div className={styles.indicator}>0</div>
             <i className="fa-regular fa-bell fa-shake"></i>
           </div>
           <div className={styles.profile}>
