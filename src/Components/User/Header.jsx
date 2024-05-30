@@ -2,10 +2,12 @@ import { useContext } from "react";
 import styles from "../../Styles/header.module.css";
 import { ThemeContext } from "../../Context/ThemeContextProvider";
 import { Link } from "react-router-dom";
+// import HeaderModal from "./HeaderModal";
 
 const Header = () => {
   const { toggleTheme, darkMode } = useContext(ThemeContext);
   return (
+    <>
       <header className={styles.header}>
         <Link className={styles.brand} to="/dashboard">
           <h2>QuestPay</h2>
@@ -33,6 +35,8 @@ const Header = () => {
           </div>
         </div>
       </header>
+      {/* <HeaderModal/> */}
+    </>
   );
 };
 

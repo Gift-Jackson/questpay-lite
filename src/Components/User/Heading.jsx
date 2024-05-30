@@ -4,7 +4,7 @@ import styles from "../../Styles/heading.module.css";
 const Heading = ({title="PageTitle"}) => {
   return (
     <header className={styles.heading}>
-      <Link to="..">
+      <Link to={-1}>
         <div className={styles.btn}>
           <span className="material-symbols-outlined theme-icon">
             arrow_back

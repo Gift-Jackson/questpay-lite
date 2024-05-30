@@ -6,7 +6,7 @@ const Cards = ({ toggleBalance, showBalance }) => {
   const [closeBox, setCloseBox] = useState(false);
   const navigate = useNavigate()
   const goToFundWalletPage = () => {
-    navigate("./fund_wallet")
+    navigate("/fund_wallet")
   }
   return (
     <>

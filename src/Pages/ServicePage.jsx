@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom"
-import Heading from "../Components/User/Heading"
-import { services } from "../constants/data"
-import styles from '../Styles/services.module.css'
+import { Link } from "react-router-dom";
+import Heading from "../Components/User/Heading";
+import { services } from "../constants/data";
+import styles from "../Styles/services.module.css";
+import Layout from "../Components/User/Layout";
 const ServicePage = () => {
-    document.title = "QuestPay | Services"
-    return (
-      <>
-      <Heading title="Services" />
-      
-      <ul className={styles.list}>
+  document.title = "QuestPay | Services";
+  return (
+    <>
+      <Layout>
+        <Heading title="Services" />
+
+        <ul className={styles.list}>
           {services.map((item, index) => {
             return (
               <Link className={styles.box} to={item.path} key={index}>
@@ -23,9 +25,10 @@ const ServicePage = () => {
               </Link>
             );
           })}
-            </ul>
-            </>
-  )
-}
+        </ul>
+      </Layout>
+    </>
+  );
+};
 
-export default ServicePage
+export default ServicePage;

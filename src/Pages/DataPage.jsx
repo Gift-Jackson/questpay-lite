@@ -1,16 +1,19 @@
-import DataForm from "../Components/User/DataForm"
-import Heading from "../Components/User/Heading"
+import DataForm from "../Components/User/DataForm";
+import Heading from "../Components/User/Heading";
+import Layout from "../Components/User/Layout";
 import styles from "../Styles/serviceform.module.css";
 const DataPage = () => {
-    document.title = "QuestPay | Data Plans"
+  document.title = "QuestPay | Data Plans";
   return (
-      <>
-          <Heading title="Data Plans" />
-          <div className={styles.container}>
-              <DataForm/>
-      </div>
-      </>
-  )
-}
+    <>
+      <Layout>
+        <Heading title="Data Plans" />
+        <div className={styles.container}>
+          <DataForm />
+        </div>
+      </Layout>
+    </>
+  );
+};
 
-export default DataPage
+export default DataPage;

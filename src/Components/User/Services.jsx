@@ -9,7 +9,7 @@ const Services = () => {
         <div className={styles.top}>
           <p>Services</p>
 
-          <Link to="services">
+          <Link to="/services">
             <p>
               See all <i className="fa-solid fa-angle-down"></i>
             </p>
