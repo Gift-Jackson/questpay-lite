@@ -1,8 +1,13 @@
 import PropTypes from "prop-types";
 import styles from "../../Styles/cards.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Cards = ({ toggleBalance, showBalance }) => {
   const [closeBox, setCloseBox] = useState(false);
+  const navigate = useNavigate()
+  const goToFundWalletPage = () => {
+    navigate("./fund_wallet")
+  }
   return (
     <>
       <div className={styles.container}>
@@ -31,7 +36,7 @@ const Cards = ({ toggleBalance, showBalance }) => {
             )}
           </div>
           <div className={styles.btns}>
-            <button className={styles.btn_1}>
+            <button className={styles.btn_1} onClick={goToFundWalletPage}>
               Fund Wallet &nbsp; <i className="fa-regular fa-plus"></i>
             </button>
             <button className={styles.btn_2}>

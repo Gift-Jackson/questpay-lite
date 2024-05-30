@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from '../Styles/notfound.module.css'
 import img from '../assets/lost.svg'
 const NotFound = () => {
+    document.title = "404: Page not found"
   return (
       <>
           <div className={styles.container}>

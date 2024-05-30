@@ -15,7 +15,7 @@ const NetworkProviders = ({ provider, setProvider }) => {
 
           {provider && (
             <p className={styles.green}>
-              <i className="fa-regular fa-circle-check"></i>&nbsp;{provider}
+              <i className="fa-solid fa-circle-check"></i>&nbsp;{provider}
             </p>
           )}
         </div>

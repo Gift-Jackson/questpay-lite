@@ -2,7 +2,7 @@ import DataForm from "../Components/User/DataForm"
 import Heading from "../Components/User/Heading"
 import styles from "../Styles/serviceform.module.css";
 const DataPage = () => {
-    document.title = "Data Plans | QuestPay"
+    document.title = "QuestPay | Data Plans"
   return (
       <>
           <Heading title="Data Plans" />
