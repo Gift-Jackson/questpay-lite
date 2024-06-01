@@ -7,7 +7,7 @@ const FundWalletPage = () => {
   return (
     <>
       <Layout>
-        <Heading title="Fund Wallet" />
+        <Heading title="Wallet" />
         <div className={styles.container}>
           {!isAcctNum ? (
             <div className={styles.wrapper}>

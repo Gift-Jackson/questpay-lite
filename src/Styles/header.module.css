@@ -17,6 +17,11 @@
     width: 50%;
     background-color: var(--border);
 }
+.modal{
+    position: absolute;
+    right: 0;
+    top: 4.5em;
+}
 
 .brand span {
     background-color: var(--medium-bg);

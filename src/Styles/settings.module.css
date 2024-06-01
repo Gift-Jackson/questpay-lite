@@ -1,0 +1,46 @@
+.container{
+    margin-top: 2em;
+}
+.lists{
+    margin-top: .5em;
+    list-style: none;
+    background-color: var(--light-bg);
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.lists li{
+    border-bottom: 1px solid var(--border);
+}
+.lists a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+.lists li:nth-of-type(3){
+    border-bottom: 0;
+}
+.btns{
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.btns button{
+    padding: .75em 2em;
+    border-radius: 50px;
+}
+.btn_1{
+    background-color:var(--light-bg) ;
+    border: 1px solid var(--border);
+}
+.btn_2{
+    background-color:var(--light-bg) ;
+    border: 1px solid var(--border);
+    color: var(--crimson);
+}
+.title{
+    padding-left: 1em;
+    color: var(--font-color-light);
+}

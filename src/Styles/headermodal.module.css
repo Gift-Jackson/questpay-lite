@@ -1,7 +1,24 @@
 .container{
     background-color: var(--light-bg);
     box-shadow: 0 5px 30px rgba(0,0,0,0.05);
-    position: absolute;
-    top: 5em;
-    right: 1em;
+    /* position: absolute;
+    top: 4.5em;
+    right: .5em; */
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid var(--border);
+}
+.container li{
+    list-style: none;
+}
+
+.container li a{
+    display: block;
+    padding: .5em 1em;
+    margin-bottom: .3em;
+}
+
+
+.logout{
+    color: var(--crimson);
 }

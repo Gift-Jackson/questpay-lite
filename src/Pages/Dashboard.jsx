@@ -4,6 +4,7 @@ import Services from "../Components/User/Services";
 import Header from "../Components/User/Header";
 import Layout from "../Components/User/Layout";
 const Dashboard = () => {
+  document.title = "Dashboard"
   const [showBalance, setShowBalance] = useState(false);
 
   const toggleBalance = () => {

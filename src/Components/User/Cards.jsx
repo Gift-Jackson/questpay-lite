@@ -6,7 +6,7 @@ const Cards = ({ toggleBalance, showBalance }) => {
   const [closeBox, setCloseBox] = useState(false);
   const navigate = useNavigate()
   const goToFundWalletPage = () => {
-    navigate("/fund_wallet")
+    navigate("/wallet")
   }
   return (
     <>
@@ -29,7 +29,7 @@ const Cards = ({ toggleBalance, showBalance }) => {
           <div>
             {showBalance ? (
               <h2>
-                0.00 <span className={styles.currency}>NGN</span>
+                175,500.00 <span className={styles.currency}>NGN</span>
               </h2>
             ) : (
               <h2>*******</h2>
@@ -58,7 +58,7 @@ const Cards = ({ toggleBalance, showBalance }) => {
               </div>
             </div>
             <div>
-              <h2>0</h2>
+              <h2>5</h2>
             </div>
             <div className={styles.btns}>
               <button className={styles.btn_2}>

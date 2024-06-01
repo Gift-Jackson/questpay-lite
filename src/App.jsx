@@ -10,6 +10,7 @@ import CablePage from "./Pages/CablePage";
 import NotFound from "./Pages/NotFound";
 import PowerPage from "./Pages/PowerPage";
 import FundWalletPage from "./Pages/FundWalletPage";
+import ProfilePage from "./Pages/ProfilePage";
 
 const App = () => {
   return (
@@ -24,7 +25,8 @@ const App = () => {
           <Route path="/data" element={<DataPage />} />
           <Route path="/cable" element={<CablePage />} />
           <Route path="/electricity" element={<PowerPage />} />
-          <Route path="/fund_wallet" element={<FundWalletPage />} />
+          <Route path="/wallet" element={<FundWalletPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ThemeContextProvider>

@@ -11,7 +11,7 @@ const NotFound = () => {
               <br />
               <p>Hold on chief...✋ <br />Developer never cook this side yet!!!</p>
 
-              <Link to="..">
+              <Link to="/dashboard">
                   <button className={styles.btn}>
                       <i className='fa-solid fa-arrow-left'></i> &nbsp; Go Back
                   </button>
