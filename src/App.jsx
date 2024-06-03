@@ -11,6 +11,9 @@ import NotFound from "./Pages/NotFound";
 import PowerPage from "./Pages/PowerPage";
 import FundWalletPage from "./Pages/FundWalletPage";
 import ProfilePage from "./Pages/ProfilePage";
+import UpdateProfilePage from "./Pages/UpdateProfilePage";
+import UpdatePasswordPage from "./Pages/UpdatePasswordPage";
+import ChangePinPage from "./Pages/ChangePinPage";
 
 const App = () => {
   return (
@@ -27,6 +30,9 @@ const App = () => {
           <Route path="/electricity" element={<PowerPage />} />
           <Route path="/wallet" element={<FundWalletPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/update-profile" element={<UpdateProfilePage/>} />
+          <Route path="/update-password" element={<UpdatePasswordPage/>} />
+          <Route path="/change-pin" element={<ChangePinPage/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ThemeContextProvider>

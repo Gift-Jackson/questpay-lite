@@ -13,6 +13,7 @@
 }
 
 :root {
+  --gradient: linear-gradient(270deg, var(--primary-color) 20%, #FF26B9 99.99%, #FE34B9 100%);
   --primary-color: #7761f8;
   --secondary-color: #f5f6f7;
   --light-bg: #fefefe;
@@ -129,13 +130,13 @@ color: var(--font-color);
 filter: drop-shadow(0 0 10px #fff);
 }
 #panel .nav-link.active:hover div{
-color: var(--primary-color);
+color: var(--white);
 filter: unset;
 }
 
 #panel .nav-link.active, #panel .nav-link.active div{
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 
 

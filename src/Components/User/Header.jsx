@@ -35,7 +35,7 @@ const Header = () => {
     <>
       <header className={styles.header}>
         <Link className={styles.brand} to="/dashboard">
-          <h2>QuestPay</h2>
+          <h1>Dashboard</h1>
           {/* <span>lite version</span> */}
         </Link>
         <div className={styles.right}>

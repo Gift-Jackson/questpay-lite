@@ -10,9 +10,18 @@
     gap: .5em;
 }
 
-.content img {
+.profile_img{
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--light-bg);
+    border: 5px solid var(--border);
 }
+.profile_img img{
+    height: 100%;
+}
+
 .profile input{
     display: none;
 }

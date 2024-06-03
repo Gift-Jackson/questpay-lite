@@ -31,9 +31,12 @@
     color: var(--font-color-light);
 }
 
-.brand h2 {
-    font-family: var(--font-2);
-    color: var(--primary-color);
+.brand h1 {
+    /* font-family: var(--font-2); */
+    color: transparent;
+    background: var(--gradient);
+    background-clip: text;
+    font-weight: 900;
 }
 
 .right {

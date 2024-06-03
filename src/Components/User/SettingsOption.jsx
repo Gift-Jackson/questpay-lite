@@ -4,7 +4,7 @@ const SettingsOption = () => {
   const profileSettings = [
     {
       label: "Update Profile",
-      path: "/account",
+      path: "/update-profile",
     },
     {
       label: "Update Password",
