@@ -1,24 +1,27 @@
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./Pages/LoginPage";
-import SignupPage from "./Pages/SignupPage";
-import Dashboard from "./Pages/Dashboard";
+import { lazy, Suspense } from "react";
 import ThemeContextProvider from "./Context/ThemeContextProvider";
-import ServicePage from "./Pages/ServicePage";
-import AirtimePage from "./Pages/AirtimePage";
-import DataPage from "./Pages/DataPage";
-import CablePage from "./Pages/CablePage";
 import NotFound from "./Pages/NotFound";
-import PowerPage from "./Pages/PowerPage";
-import FundWalletPage from "./Pages/FundWalletPage";
-import ProfilePage from "./Pages/ProfilePage";
-import UpdateProfilePage from "./Pages/UpdateProfilePage";
-import UpdatePasswordPage from "./Pages/UpdatePasswordPage";
-import ChangePinPage from "./Pages/ChangePinPage";
+
+// Lazy load components
+const LoginPage = lazy(() => import("./Pages/LoginPage"));
+const SignupPage = lazy(() => import("./Pages/SignupPage"));
+const Dashboard = lazy(() => import("./Pages/Dashboard"));
+const ServicePage = lazy(() => import("./Pages/ServicePage"));
+const AirtimePage = lazy(() => import("./Pages/AirtimePage"));
+const DataPage = lazy(() => import("./Pages/DataPage"));
+const CablePage = lazy(() => import("./Pages/CablePage"));
+const PowerPage = lazy(() => import("./Pages/PowerPage"));
+const FundWalletPage = lazy(() => import("./Pages/FundWalletPage"));
+const ProfilePage = lazy(() => import("./Pages/ProfilePage"));
+const UpdateProfilePage = lazy(() => import("./Pages/UpdateProfilePage"));
+const UpdatePasswordPage = lazy(() => import("./Pages/UpdatePasswordPage"));
+const ChangePinPage = lazy(() => import("./Pages/ChangePinPage"));
 
 const App = () => {
   return (
-    <>
-      <ThemeContextProvider>
+    <ThemeContextProvider>
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
@@ -30,13 +33,13 @@ const App = () => {
           <Route path="/electricity" element={<PowerPage />} />
           <Route path="/wallet" element={<FundWalletPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/update-profile" element={<UpdateProfilePage/>} />
-          <Route path="/update-password" element={<UpdatePasswordPage/>} />
-          <Route path="/change-pin" element={<ChangePinPage/>} />
+          <Route path="/update-profile" element={<UpdateProfilePage />} />
+          <Route path="/update-password" element={<UpdatePasswordPage />} />
+          <Route path="/change-pin" element={<ChangePinPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </ThemeContextProvider>
-    </>
+      </Suspense>
+    </ThemeContextProvider>
   );
 };
 
